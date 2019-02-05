@@ -1,4 +1,4 @@
-package com.gradescope.pixlab;
+package com.gradescope.pixLab;
 
 public class IntArrayWorkerTester
 {
