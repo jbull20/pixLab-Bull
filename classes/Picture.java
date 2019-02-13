@@ -1,3 +1,5 @@
+package com.gradescope.pixlab;
+
 import java.awt.*;
 import java.awt.font.*;
 import java.awt.geom.*;
@@ -233,6 +235,27 @@ public class Picture extends SimplePicture
               topPixel = pixels[row][col];
               bottomPixel = pixels[mirrorPoint + mirrorPoint - row][col];
               bottomPixel.setColor(topPixel.getColor());
+          }
+      }
+  }
+
+  public void mirrorGull() {
+      int mirrorPoint = 344;
+      Pixel leftPixel = null;
+      Pixel rightPixel = null;
+      Pixel[][] pixels = this.getPixels2D();
+
+      // loop through the rows
+      for (int row = 234; row < 322; row++)
+      {
+          // loop from 13 to just before the mirror point
+          for (int col = 238; col < mirrorPoint; col++)
+          {
+
+              leftPixel = pixels[row][col];
+              rightPixel = pixels[row]
+                      [mirrorPoint - col + mirrorPoint];
+              rightPixel.setColor(leftPixel.getColor());
           }
       }
   }
