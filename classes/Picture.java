@@ -1,4 +1,4 @@
-package com.gradescope.pixlab;
+//package com.gradescope.pixlab;
 
 import java.awt.*;
 import java.awt.font.*;
@@ -339,7 +339,10 @@ public class Picture extends SimplePicture
     this.mirrorVertical();
     this.write("images/collage.jpg");
   }
-  
+
+  public void myCollage() {
+      
+  }
   
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
