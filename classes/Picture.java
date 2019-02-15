@@ -132,6 +132,11 @@ public class Picture extends SimplePicture
           }
       }
   }
+
+  //challenge method
+  public void fixUnderwater() {
+
+  }
   
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
@@ -195,6 +200,11 @@ public class Picture extends SimplePicture
               topPixel.setColor(bottomPixel.getColor());
           }
       }
+  }
+
+  //challenge method
+  public void mirrorDiagonal() {
+
   }
   
   /** Mirror just part of a picture of a temple */
@@ -289,6 +299,28 @@ public class Picture extends SimplePicture
         toPixel.setColor(fromPixel.getColor());
       }
     }   
+  }
+
+  public void copy(Picture fromPic, int startRow, int endRow, int startCol, int endCol) {
+      Pixel fromPixel = null;
+      Pixel toPixel = null;
+      Pixel[][] toPixels = this.getPixels2D();
+      Pixel[][] fromPixels = fromPic.getPixels2D();
+      for (int fromRow = endRow, toRow = startRow;
+           fromRow < fromPixels.length &&
+                   toRow < toPixels.length;
+           fromRow++, toRow++)
+      {
+          for (int fromCol = endCol, toCol = startCol;
+               fromCol < fromPixels[0].length &&
+                       toCol < toPixels[0].length;
+               fromCol++, toCol++)
+          {
+              fromPixel = fromPixels[fromRow][fromCol];
+              toPixel = toPixels[toRow][toCol];
+              toPixel.setColor(fromPixel.getColor());
+          }
+      }
   }
 
   /** Method to create a collage of several pictures */
