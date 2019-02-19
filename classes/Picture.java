@@ -341,7 +341,21 @@ public class Picture extends SimplePicture
   }
 
   public void myCollage() {
-      
+      Picture gorge1 = new Picture("images/gorge.jpg");
+      Picture gorge2 = new Picture(gorge1);
+      Picture gorge3 = new Picture(gorge1);
+      gorge1.createCollage();
+      gorge2.mirrorArms();
+      gorge2.mirrorVertical();
+      gorge2.mirrorGull();
+      gorge2.mirrorHorizontalBotToTop();
+      gorge2.mirrorHorizontal();
+      gorge2.mirrorVerticalRightToLeft();
+      gorge3.keepOnlyBlue();
+      gorge3.mirrorVertical();
+      this.copy(gorge1, 15, 0);
+      this.copy(gorge3, 250, 0);
+      this.copy(gorge2, 100, 200);
   }
   
   /** Method to show large changes in color 
