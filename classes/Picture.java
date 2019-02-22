@@ -387,7 +387,13 @@ public class Picture extends SimplePicture
     }
     for (int row = 0; row < pixels.length-1; row++) {
         for (int col = 0; col < pixels[0].length; col++) {
-            
+            topPixel = pixels[row][col];
+            bottomPixel = pixels[row+1][col];
+            bottomColor = bottomPixel.getColor();
+            if(topPixel.colorDistance(bottomColor) > edgeDist)
+                topPixel.setColor(Color.BLACK);
+            else
+                topPixel.setColor(Color.WHITE);
         }
     }
   }
